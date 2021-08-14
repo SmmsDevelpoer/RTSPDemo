@@ -16,7 +16,7 @@ export class AppController {
   @Get('startRecord')
   startRecord(@Res() res: Response) {
     let time = new Date().getTime();
-    let folder = '/volume1/IPCamRecord';
+    let folder = '../ipcamrecord';
 
     let message = 'The folder is not exist.';
     if (fs.existsSync(folder)) {

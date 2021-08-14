@@ -7,8 +7,7 @@ RUN npm run build
 # ----- multi-stage ----- #
 FROM docker.io/library/node:14.16.0
 WORKDIR /code
-RUN mkdir -p ./log
-RUN mkdir -p ../files
+RUN mkdir -p ../ipcamrecord
 
 COPY . .
 RUN npm ci --production=true
