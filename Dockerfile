@@ -8,6 +8,7 @@ RUN npm run build
 FROM docker.io/library/node:14.16.0
 WORKDIR /code
 RUN mkdir -p ../ipcamrecord
+RUN apt-get update && apt-get install ffmpeg
 
 COPY . .
 RUN npm ci --production=true
