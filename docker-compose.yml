@@ -13,3 +13,5 @@ services:
         published: 3000
         protocol: tcp
     restart: always
+    volumes:
+      - /volume1/IPCamRecord:/ipcamrecord
