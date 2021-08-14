@@ -20,12 +20,11 @@ export class AppController {
 
     let message = 'The folder is not exist.';
     if (fs.existsSync(folder)) {
-      // let videoName = `${ time }.mp4`;
-      // let childPs = spawn(
-      //   'ffmpeg',
-      //   ['-i', 'rtsp://admin:123456@192.168.50.130:554/stream1', `${ folder }/${ videoName }`]);
-      // message = `Start record, PID ${ childPs.pid }`;
-      message = `Start record, PID ......`;
+      let videoName = `${ time }.mp4`;
+      let childPs = spawn(
+        'ffmpeg',
+        ['-i', 'rtsp://admin:123456@192.168.50.130:554/stream1', `${ folder }/${ videoName }`]);
+      message = `Start record, PID ${ childPs.pid }`;
     }
 
     res.status(HttpStatus.OK).send({ message: message });
